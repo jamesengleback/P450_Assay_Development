@@ -11,4 +11,6 @@ with these which will give false positives.
 I'm going to use each of the plate types in my [inventory](Inventory.csv) for this one. My last assay isn't written onto Github
 yet but will do soon. 
 * Measure the scattering of wild type P450 BM3 heme domain with no substrate 
-..* Scattering measured by using a derivation of the Rayleigh light scattering equation
+* Scattering measured by using a derivation of the Rayleigh light scattering equation
+* Measurements will be UV-Vis traces taken between 200 and 800 nm
+
