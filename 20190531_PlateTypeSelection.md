@@ -8,9 +8,9 @@ Down the line, I'll have a tinker with buffer conditions, but surfactants are ou
 with these which will give false positives.
 
 |Make|Plate type| Product Number|Qty |
-|:----:|:----------:|:----------------:|:---:|
-|Thermo|Nunclon Delta Surface| |20 |
-|Brand| |781620|2| 
+|:---:|:--------:|:-------------:|:---:|
+|Thermo|Nunclon Delta Surface|? |20 |
+|Brand|?|781620|2| 
 |Brand|Lipograde| 781860|4| 
 |Nunc| Maxisorp| 464718|1| 
 |Corning| Cellbind| 3770BC| 17|
