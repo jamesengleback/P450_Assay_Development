@@ -31,6 +31,12 @@ I was working with the two substrates: [Lauric Acid](https://pubchem.ncbi.nlm.ni
 >>> import rdkit.Chem as Chem
 >>> import  rdkit.Chem.Draw as draw
 >>> Lauric_acid = Chem.MolFromSmiles('CCCCCCCCCCCC(=O)O')
+>>> N_Palmitoylglycine = Chem.MolFromSmiles('CCCCCCCCCCCCCCCC(=O)NCC(=O)O')
+>>> N_PalmitoylglycineIMAGE = draw.MolToImage(N_Palmitoylglycine)
+>>> Lauric_acidIMAGE = draw.MolToImage(Lauric_acid)
+>>> Lauric_acidIMAGE.save('Lauric_acid.png')
+>>> N_PalmitoylglycineIMAGE.save('N_Palmitoylglycine.png')
+
 ```
 
 * ![Lauric acid](LauricAcid.png)
