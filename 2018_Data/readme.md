@@ -38,8 +38,9 @@ I was working with the two substrates: [Lauric Acid](https://pubchem.ncbi.nlm.ni
 >>> N_PalmitoylglycineIMAGE.save('N_Palmitoylglycine.png')
 
 ```
-
- ![Lauric acid](Lauric_acid.png) ![NPG](N_Palmitoylglycine.png)
+|:Lauric Acid:|:N-Palmitoylglycine:|
+|----|-----|
+| ![Lauric acid](Lauric_acid.png) |![NPG](N_Palmitoylglycine.png)|
 
 Which are natural substrates for my enzyme P450 BM3 Heme domain (wild type).I planned my plate layouts in this (mess) script: *Placeolder* 
 * I dispensed my compounds with an Echo 550
