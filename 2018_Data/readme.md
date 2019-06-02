@@ -33,5 +33,19 @@ Which are natural substrates for my enzyme P450 BM3 Heme domain (wild type).I pl
 * I dispensed my compounds with an Echo 550
 * I dispensed my protein with a Thermo Multidrop Combi, which is basically a peristaltic pump
 * My protein was thawed from -80 storage and diluted in the assay buffer: 100 mM KPi, pH 7. I checked the protein concentrations using a Varian UV-Vis Spectrometer using the equation *Placeholder* and diluted to the desired final concentrations.
-* I read my plates on a BMG-Pherastar set to full trace mode (sweep all wavelengths).
-.. * These machines read fast, but transfer of data to the connected PC was slow
+* I read my plates on a BMG-Pherastar set to full trace mode (sweep all wavelengths). These machines read fast, but transfer of data to the connected PC was slow, would love tips on how to make it faster.
+
+### Results and analysis
+Here are some files:
+[1]('180918_1753.csv'),
+[2]('180918_1845.csv'),
+[3]('180918_1818.csv'),
+[4]('180918_1747.csv'),
+[5]('180918_1913.csv'),
+[6]('180918_1854.csv'),
+[7]('180918_1800.csv'),
+[8]('180918_1810.csv'),
+[9]('180918_1826.csv'),
+[10]('180918_1745.csv'),
+[11]('180918_1839.csv'),
+[12]('180918_1904.csv')
