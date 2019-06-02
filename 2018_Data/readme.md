@@ -20,4 +20,4 @@ At the ime of designing these experiments, I was set on using a factorial-style 
 
 My end point was going to be the standard deviation of *K* ~d~, which I am trying to minimize. I tried this plate system out in 384 and 1536 well plates
 
-![distributions](https://github.com/jamesengleback/P450_Assay_Development/tree/master/2018_Data)
+![distributions](P450_Assay_Development/tree/master/2018_Data/2018_PlateAssayDistribution.png	)
