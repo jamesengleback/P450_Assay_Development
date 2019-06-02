@@ -70,3 +70,4 @@ I used ```$python3 2018_Data/PlateAnalysisTools.py``` haphazardly to concatenate
 |All of the Traces|
 |-----------------|
 |![traces](2018_PlateAssayResultsAllOn1.png)|
+|The trailling up to the left is normally something that we see when the protein is precipitating. It can be described with the rayleigh light scattering equation, so we can quantify the degree of scattering 👍👍👍|
