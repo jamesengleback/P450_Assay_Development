@@ -38,7 +38,7 @@ I was working with the two substrates: [Lauric Acid](https://pubchem.ncbi.nlm.ni
 >>> N_PalmitoylglycineIMAGE.save('N_Palmitoylglycine.png')
 
 ```
-|:Lauric Acid:|:N-Palmitoylglycine:|
+|Lauric Acid|N-Palmitoylglycine|
 |----|-----|
 | ![Lauric acid](Lauric_acid.png) |![NPG](N_Palmitoylglycine.png)|
 
