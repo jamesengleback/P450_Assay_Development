@@ -64,3 +64,8 @@ Here are some files:
 [12]('180918_1904.csv')
 
 I'll match them up with the experimental conditions later
+
+I used ```$python3 2018_Data/PlateAnalysisTools.py``` haphazardly to concatenate all of the cleaned plate results onto one dataframe and plot all of the traces:
+|All of the Traces|
+|-----------------|
+|![traces](2018_PlateAssayResultsAllOn1.png)|
