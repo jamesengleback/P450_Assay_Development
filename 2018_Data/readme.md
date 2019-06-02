@@ -25,5 +25,6 @@ My end point was going to be the standard deviation of *K* ~d~, which I am tryin
 See how some of the concentration points are bunched up. It's copied from and [old notebook](2018_Data/20180913-Distribution functions.ipynb)
 ### Method
 I was working with the two substrates: [Lauric Acid](https://pubchem.ncbi.nlm.nih.gov/compound/Lauric-acid) and [N-Palmitoylglycine](https://pubchem.ncbi.nlm.nih.gov/compound/151008):
-![Lauric acid](LauricAcid.png)
-![NPG](NPalmitoylglycine.png)
+
+* ![Lauric acid](LauricAcid.png)
+* ![NPG](NPalmitoylglycine.png)
