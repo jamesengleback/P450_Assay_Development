@@ -28,3 +28,10 @@ I was working with the two substrates: [Lauric Acid](https://pubchem.ncbi.nlm.ni
 
 * ![Lauric acid](LauricAcid.png)
 * ![NPG](NPalmitoylglycine.png)
+
+Which are natural substrates for my enzyme P450 BM3 Heme domain (wild type).I planned my plate layouts in this (mess) script: *Placeolder* 
+* I dispensed my compounds with an Echo 550
+* I dispensed my protein with a Thermo Multidrop Combi, which is basically a peristaltic pump
+* My protein was thawed from -80 storage and diluted in the assay buffer: 100 mM KPi, pH 7. I checked the protein concentrations using a Varian UV-Vis Spectrometer using the equation *Placeholder* and diluted to the desired final concentrations.
+* I read my plates on a BMG-Pherastar set to full trace mode (sweep all wavelengths).
+.. * These machines read fast, but transfer of data to the connected PC was slow
