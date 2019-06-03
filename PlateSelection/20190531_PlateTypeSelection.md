@@ -55,3 +55,10 @@ Here's my working in uM and uL:
 >>> (10000*2)/983.4087522105264 # 2 uM
 20.3374232281781
 ```
+
+1. I made up 10 mls of buffer containing the dilutions calculated above
+2. Then checked their absorbance on the UV-Vis box and saved the data [here](PlateSelection/20190603_BM3PostdilutionConcCheck.csv)
+3. Dispensed row 1 of each plate with 2 uM protein row 2 5uM and row 3 10 uM
+4. Measured absorbace from 220:800 nm on a BMG Pherastar FS
+5. Spun plates at 3,000 rpm for 3 mins (to remove bubbles)
+6. Re-did the absorbance measurements, adding ```_2``` as a suffix
