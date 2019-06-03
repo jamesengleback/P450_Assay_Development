@@ -66,3 +66,4 @@ Here's my working in uM and uL:
 I just plotted everything using [this script I wrote](PlateSelection/20190603_PlateSelectionAnalysis_JustPlotEverything.py). It's nice to see that some plates aren't like the others!
 
 ![alltraces](2018_PlateAssayResultsAllOn2.png)
+Looks like I chose a lot of very similar colors, which isn't very insightful. I'll do something more numeric in a bit.
