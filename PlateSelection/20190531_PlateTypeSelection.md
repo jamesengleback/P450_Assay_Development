@@ -32,10 +32,7 @@ The concentration range I was working in before was 2-10 uM, so maybe I'll do 2,
 Made fresh stocks of assay buffer 1
 |Buffer1|100 mM KPi|pH 7|
 Defrosted BM3 wild Type
-
-Here's my data
-and a quick concentration check:
-
+### Concentration Check
 ```python
 >>> A420 = 0.4671191573
 >>> dil = 5./1000.
@@ -44,3 +41,11 @@ and a quick concentration check:
 0.9834087522105261
 ```
 conc = 0.983408 mM
+
+#### Dilutions
+4.8 mls per concentration + spare and dead volume. I'll do 10 mls.
+|Target conc| Target vol|Protein Vol|Buffer Vol|
+|------------|----------|---------|--------------|
+|10 um|10|||
+|5 um|10|||
+|2 um|10|||
