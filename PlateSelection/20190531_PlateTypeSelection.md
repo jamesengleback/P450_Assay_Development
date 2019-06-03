@@ -27,3 +27,20 @@ yet but will do soon.
 
 So I have 6 different plate types, and say for each concentrations I want to do enough repeats to fill a row. That's 16 wells of 50 ul which is 800 ul total per row, per plate. x6 plates = 4.8 ml + some dead volume for if I dispense with the multidrop.
 The concentration range I was working in before was 2-10 uM, so maybe I'll do 2, 5 and 10 today.
+
+# Lab Notes
+Made fresh stocks of assay buffer 1
+|Buffer1|100 mM KPi|pH 7|
+Defrosted BM3 wild Type
+
+Here's my data
+and a quick concentration check:
+
+```python
+>>> A420 = 0.4671191573
+>>> dil = 5./1000.
+>>> ext = 95
+>>> (A420/dil)/ext
+0.9834087522105261
+```
+conc = 0.983408 mM
