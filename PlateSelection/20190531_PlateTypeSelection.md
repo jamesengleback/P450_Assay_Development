@@ -44,9 +44,14 @@ conc = 0.983408 mM
 
 #### Dilutions
 4.8 mls per concentration + spare and dead volume. I'll do 10 mls.
+I'm trying to hit 2, 5 and 10 uM
+Here's my working in uM and uL:
 
-|Target conc| Target vol|Protein Vol|Buffer Vol|
-|------------|----------|---------|--------------|
-|10 um|10|  |   |
-|5 um|10|  |  |
-|2 um|10|  |   |
+```python
+>>> (10000*10)/983.4087522105264 # 10 uM
+101.6871161408905
+>>> (10000*5)/983.4087522105264 # 5 uM
+50.84355807044525
+>>> (10000*2)/983.4087522105264 # 2 uM
+20.3374232281781
+```
