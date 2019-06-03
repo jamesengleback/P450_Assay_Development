@@ -65,4 +65,4 @@ Here's my working in uM and uL:
 
 I just plotted everything using [this script I wrote](PlateSelection/20190603_PlateSelectionAnalysis_JustPlotEverything.py). It's nice to see that some plates aren't like the others!
 
-![alltraces](PlateSelection/2018_PlateAssayResultsAllOn2.png)
+![alltraces](2018_PlateAssayResultsAllOn2.png)
