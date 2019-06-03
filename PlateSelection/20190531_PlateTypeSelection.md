@@ -62,3 +62,6 @@ Here's my working in uM and uL:
 4. Measured absorbace from 220:800 nm on a BMG Pherastar FS
 5. Spun plates at 3,000 rpm for 3 mins (to remove bubbles)
 6. Re-did the absorbance measurements, adding ```_2``` as a suffix
+
+I just plotted everything using [this script I wrote](PlateSelection/20190603_PlateSelectionAnalysis_JustPlotEverything.py). It's nice to see that some plates aren't like the others!
+![alltraces](PlateSelection/20190603_Plateselection_allTraces.png)
