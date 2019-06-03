@@ -46,6 +46,6 @@ conc = 0.983408 mM
 4.8 mls per concentration + spare and dead volume. I'll do 10 mls.
 |Target conc| Target vol|Protein Vol|Buffer Vol|
 |------------|----------|---------|--------------|
-|10 um|10|||
-|5 um|10|||
-|2 um|10|||
+|10 um|10|  |   |
+|5 um|10|  |  |
+|2 um|10|  |   |
