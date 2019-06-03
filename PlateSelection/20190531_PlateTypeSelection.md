@@ -22,4 +22,8 @@ yet but will do soon.
 * Measure the scattering of wild type P450 BM3 heme domain with no substrate 
 * Scattering measured by using a derivation of the Rayleigh light scattering equation
 * Measurements will be UV-Vis traces taken between 200 and 800 nm
+* I'm going to fix the volume at 50 uM, becuase I'm feeling like for the final assay, maybe I want to be diluting and dispensing my compounds by serial dilution, in which case I think a bigger volume is a bit better?
+* I might try a couple of different protein contentrations. Will measure the final dilutions on a regular UV-Vis.
 
+So I have 6 different plate types, and say for each concentrations I want to do enough repeats to fill a row. That's 16 wells of 50 ul which is 800 ul total per row, per plate. x6 plates = 4.8 ml + some dead volume for if I dispense with the multidrop.
+The concentration range I was working in before was 2-10 uM, so maybe I'll do 2, 5 and 10 today.
