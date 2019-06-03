@@ -44,6 +44,7 @@ conc = 0.983408 mM
 
 #### Dilutions
 4.8 mls per concentration + spare and dead volume. I'll do 10 mls.
+
 |Target conc| Target vol|Protein Vol|Buffer Vol|
 |------------|----------|---------|--------------|
 |10 um|10|  |   |
