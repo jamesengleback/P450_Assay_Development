@@ -67,3 +67,14 @@ I just plotted everything using [this script I wrote](PlateSelection/20190603_Pl
 
 ![alltraces](2018_PlateAssayResultsAllOn2.png)
 Looks like I chose a lot of very similar colors, which isn't very insightful. I'll do something more numeric in a bit.
+
+## Analysis
+#### Aim:
+I'm looking for the effect of plate type on scattering. I also scanned the plates before and after spinning them which might have an effect. I also varied protein concentration, so that's:
+* 6 plate type
+* 3 protein concentrations
+* Before and after centrifugation
+All in 16 replicates. Here's what I need to do:
+1. Split the data into ets of repeats
+2. Fit the scattering curve to it to get out my scattering metric
+3. Look for correlations between my factors above and the scattering
