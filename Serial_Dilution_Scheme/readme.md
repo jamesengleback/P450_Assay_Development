@@ -20,3 +20,5 @@ Here's what I'll vary:
 * ```Time Points``` Just in case this thing is time sensitive, I really should know
 
 Plate layout:
+
+![plate layout](Untitled drawing.png)
