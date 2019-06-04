@@ -22,3 +22,11 @@ Here's what I'll vary:
 Plate layout:
 
 ![plateLaoytot](20190604_Platelayout.png)
+
+
+Looks cool. I think I'll do my serial Dilution in a PCR 8 strip and do  repeats of each conc, which will fill a column. 
+
+#### Serial dilution scheme
+For this test I want to keep my DMSO conc constant. For now I'll do the easy sounding option which is equal vols of double concentrate protein and substrate, each in the same buuffer. That means my starting protein stock has to be 20 uM.
+
+I'm doing two stocks of each substrate - one where the final DMSO conc is 5%, and the other 2.5%. The DMSO stock of compound has to be 10 mM because that's what vendors sell the compounds as. So for each compound I'll do a 5 and 10% v/v 10 mM Compound in DMSO, in assay buffer.
