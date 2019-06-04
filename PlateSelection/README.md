@@ -83,5 +83,7 @@ All in 16 replicates. Here's what I need to do:
 Figured out how to use subplots and plotted all of the experiments using [this script](20190603_PlateSelectionAnalysis_subplotBrach.py), which should have some reusable bits in. If I was smart I'd make a standard set of really useful tools but whatever. 
 
 |![Subplots](20190603_PlateselectionTests_ALL.png)|
-|-----------------|
-|text|
+|:-----------------:|
+|*Figures* Hope that's in bold. The title indicate the product identfier, and the suffix ```_2``` indicates that the readings were taken after 3 minutes centrifugation at 3,000 rpm, which should remove bubbles.
+
+Looking at this, I can see that centrifugation appears to make a difference. When I was doing the readings I noticed more bubbles in the High protein conc wells, maybe it's a viscosity thing. These bubble might be a serious problem in terms of anomalies, so I'll be spinning all my plates from now on. Maybe for longer than 3 mins too. It looks like some plates are more anomaly-prone than others, so I'll look into that|
