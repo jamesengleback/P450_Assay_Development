@@ -21,4 +21,4 @@ Here's what I'll vary:
 
 Plate layout:
 
-![plate layout](Untitled drawing.png)
+![plateLaoytot](20190604_Platelayout.png)
