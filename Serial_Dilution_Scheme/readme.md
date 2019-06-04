@@ -8,3 +8,6 @@ I want to dispense my compounds using serial dilutions because thy're easy. Here
 * In the 2018 tests, I had trouble mixing fatty acids dispensed by Echo with the assay mix, I think I'll have more luck with a serial dilution
 
 ### Plan
+Here's what I want to keep fixed and why:
+* ```[Protein]``` at 10 uM - Gives a good signal to noise ratio, not far off what we'd use for a classical titration
+* ```Volume of DMSO in each well``` 
