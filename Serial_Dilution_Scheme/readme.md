@@ -10,4 +10,13 @@ I want to dispense my compounds using serial dilutions because thy're easy. Here
 ### Plan
 Here's what I want to keep fixed and why:
 * ```[Protein]``` at 10 uM - Gives a good signal to noise ratio, not far off what we'd use for a classical titration
-* ```Volume of DMSO in each well``` 
+* ```Conc of DMSO in each well```  - DMSO can interact with P450 BM3, so I need to control this variable 
+* ```Well Volume``` 50 uM - suggested working volume for plates, seems like it gives a good signal
+* ```Number of substrate concentrations``` 7 seems fine
+
+Here's what I'll vary:
+* ```Substrate``` - I'm trying Lauric Acid + N-Palmitoglycine
+* ```[Substrate]``` - working range shouldn't exceed 10 mM in DMSO and 5% v/v DMSO in final mix (because vendors sell compounds in 10 mM DMSO and because 5% DMSO is about the limit of what BM3
+* ```Time Points``` Just in case this thing is time sensitive, I really should know
+
+Plate layout:
