@@ -78,3 +78,10 @@ All in 16 replicates. Here's what I need to do:
 1. Split the data into ets of repeats
 2. Fit the scattering curve to it to get out my scattering metric
 3. Look for correlations between my factors above and the scattering
+
+#### Part 1 - Descriptive
+Figured out how to use subplots and plotted all of the experiments using [this script](20190603_PlateSelectionAnalysis_subplotBrach.py), which should have some reusable bits in. If I was smart I'd make a standard set of really useful tools but whatever. 
+
+|![Subplots](20190603_PlateselectionTests_ALL.png)|
+|-----------------|
+|text|
