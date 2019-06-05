@@ -101,3 +101,10 @@ I plotted all the columns in the plate, some of them look ok!
 |![col5](20190605_SerialDilutionDifferenceSpectra__col7.png	)|
 |![col6](20190605_SerialDilutionDifferenceSpectra__col8.png	)|
 |![col7](20190605_SerialDilutionDifferenceSpectra__col9.png	)|
+
+|and some Michaelis menten plots|
+|---------------|
+|![col4](20190605_SerialDilutionMichaelisMented_col6.png	)|
+|![col5](20190605_SerialDilutionMichaelisMented_col7.png	)|
+|![col6](20190605_SerialDilutionMichaelisMented_col8.png	)|
+|![col7](20190605_SerialDilutionMichaelisMented_col9.png	)|
