@@ -102,9 +102,11 @@ I plotted all the columns in the plate, some of them look ok!
 |![col6](20190605_SerialDilutionDifferenceSpectra__col8.png	)|
 |![col7](20190605_SerialDilutionDifferenceSpectra__col9.png	)|
 
-|and some Michaelis menten plots|
+|and some Michaelis Menten plots|
 |---------------|
 |![col4](20190605_SerialDilutionMichaelisMented_col6.png	)|
 |![col5](20190605_SerialDilutionMichaelisMented_col7.png	)|
 |![col6](20190605_SerialDilutionMichaelisMented_col8.png	)|
 |![col7](20190605_SerialDilutionMichaelisMented_col9.png	)|
+
+NPG is weird, will need to figure out what's going on there. Maybe in the next round of tests I should be making buffer blanks of each compound or something. Will need to do that at some point anyway.
