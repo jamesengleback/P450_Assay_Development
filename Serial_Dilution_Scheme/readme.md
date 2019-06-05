@@ -83,5 +83,11 @@ And here's a dump of it:
 I sorted the traces by their A320 vales [here](20190605_SerialDil_WorstOffenders.csv) because I think that part of the trace is supposed to be fairly constant. So far it looks like that's just something that's affecting rows 7 and 9, which both contained lauric acid. It's probably a compound specific thing, maybe it has its own absorbance. The worst affected wells are the ones with the highest lauric acid concentrations too.
 
 #### Analysis
-###### Aim - calculate Kd for lauric acid from the data
-
+###### Aim - calculate Kd for the fatty acids from the data
+I plotted all the columns in the plate, some of them look ok!
+|[col4](20190605_SerialDilutionDataDump__col4.png)|
+|[col5](20190605_SerialDilutionDataDump__col5.png)|
+|[col6](20190605_SerialDilutionDataDump__col6.png)|
+|[col7](20190605_SerialDilutionDataDump__col7.png)|
+|[col8](20190605_SerialDilutionDataDump__col8.png)|
+|[col9](20190605_SerialDilutionDataDump__col9.png)|
