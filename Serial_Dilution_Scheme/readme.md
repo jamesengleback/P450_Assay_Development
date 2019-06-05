@@ -64,4 +64,6 @@ Here's everything in mM 🖕
 |NPG 10%|1|0.5|0.25|0.125|0.0625|0.03125|0.015625|0.0078125|
 |Lauric 10%|1|0.5|0.25|0.125|0.0625|0.03125|0.015625|0.0078125|
 
-I multichannel pipetted 25 uL of each of these into the 384 well plate (Corning 3640) annd made up the remaining 25 uL with my protein. I'll do a conc table later maybe. I span it all at 3700 rpm for 3 minutes then scanned it on the PheraSTAR fs on a 220-800 nm sweep of the wells.
+I multichannel pipetted 25 uL of each of these into the 384 well plate (Corning 3640) annd made up the remaining 25 uL with my protein. I'll do a conc table later maybe. I span it all at 3700 rpm for 3 minutes then scanned it on the PheraSTAR fs on a 220-800 nm sweep of the wells. The layout looked like this in the end btw:
+
+![Plate that I did](PlatelayoutIEndedUpDoing6thJune.png)
