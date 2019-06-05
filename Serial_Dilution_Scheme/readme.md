@@ -70,4 +70,8 @@ I multichannel pipetted 25 uL of each of these into the 384 well plate (Corning 
 
 Here's the platereader [data](SerialDilSchem1.CSV)
 
-Analysis later
+And here's a dump of it:
+
+|![Dump!](20190605_SerialDilutionDataDump.png)|
+|-----------------------------------------------|
+|Well it looks like there's some sort of shift there 👍👍. It also looks like the buffer only wells are also doing what I had previously though was scattering. I can subtract these control traces from the real ones and see what that looks like|
