@@ -36,3 +36,30 @@ Here's what the master stocks will look like for the 5% mixes:
 ![8strips](8StripSerialDilution.png)
 
 These will get diluted by half again in the plate with the stock. The 2.5% ones are the same sort of thing, just half concs.
+
+#### Lab Notes 
+##### 6th June
+Diluted the protein stock (BM3 WT heme, same as in [plate selection](P450_Assay_Development/PlateSelection) from yesterday).
+
+```python
+>>> conc = 983.4087522105264
+>>> 6*16*25 # 6 rows times 16 cells per row times 25 uL of protein stock per well
+2400
+>>> 2400*1.5 # Times a safety margin
+3600.0 
+>>> 3600.0*20 # 20 uM protein
+72000.0
+>>> 72000.0/conc
+73.21472362144117
+```
+I measured the absorbance of this thing on a spec here
+...
+
+I diluted the compounds from old 10 mM stocks in DMSO. Might do it properly next time. 
+
+| ID | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| ---|---|---|---|---|---|---|---|---|
+|NPG 5%|0.5|0.25|0.125|0.0625|0.03125|0.015625|0.0078125|0.00390625|
+|Lauric 5%|0.5|0.25|0.125|0.0625|0.03125|0.015625|0.0078125|0.00390625|
+|NPG 10%|1|0.5|0.25|0.125|0.0625|0.03125|0.015625|0.0078125|
+|Lauric 10%|1|0.5|0.25|0.125|0.0625|0.03125|0.015625|0.0078125|
