@@ -80,4 +80,4 @@ And here's a dump of it:
 |----------------|
 |It's starting to look like a normal titration! There's a sort of inflection point in there. I'll find out which traces are absorbing way more than the others|
 
-I sorted the traces by their A320 vales [here](20190605_SerialDil_WorstOffenders.csv) because I think that part of the trace is supposed to be fairly constant.
+I sorted the traces by their A320 vales [here](20190605_SerialDil_WorstOffenders.csv) because I think that part of the trace is supposed to be fairly constant. So far it looks like that's just something that's affecting rows 7 and 9, which both contained N-palmitoylglycine. It's probably a compound specific thing.
