@@ -55,6 +55,9 @@ Here's my working in uM and uL:
 >>> (10000*2)/983.4087522105264 # 2 uM
 20.3374232281781
 ```
+I measured the concentration of these things on the Varian UV-vis spec and calculated the actual concentration using [this scrip](20190603_ProtinConcCheck.py)
+
+![BM3 concs](20190605_BM3_Conc_Check1.png)
 
 1. I made up 10 mls of buffer containing the dilutions calculated above
 2. Then checked their absorbance on the UV-Vis box and saved the data [here](PlateSelection/20190603_BM3PostdilutionConcCheck.csv)
