@@ -74,4 +74,8 @@ And here's a dump of it:
 
 |![Dump!](20190605_SerialDilutionDataDump.png)|
 |-----------------------------------------------|
-|Well it looks like there's some sort of shift there 👍👍. It also looks like the buffer only wells are also doing what I had previously though was scattering. I can subtract these control traces from the real ones and see what that looks like|
+|Well it looks like there's some sort of shift there 👍👍. It also looks like the buffer only wells are also doing what I had previously though was scattering. I can subtract these control traces from the real ones, which looks like this:
+
+| ![baseline corrected dump](20190605_SerialDilutionDataDump_BaselineCorr.png)|
+|----------------|
+|It's starting to look like a normal titration! There's a sort of inflection point in there. I'll find out which traces are absorbing way more than the others|
