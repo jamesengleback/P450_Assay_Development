@@ -85,9 +85,12 @@ I sorted the traces by their A320 vales [here](20190605_SerialDil_WorstOffenders
 #### Analysis
 ###### Aim - calculate Kd for the fatty acids from the data
 I plotted all the columns in the plate, some of them look ok!
-|[col4](20190605_SerialDilutionDataDump__col4.png)|
-|[col5](20190605_SerialDilutionDataDump__col5.png)|
-|[col6](20190605_SerialDilutionDataDump__col6.png)|
-|[col7](20190605_SerialDilutionDataDump__col7.png)|
-|[col8](20190605_SerialDilutionDataDump__col8.png)|
-|[col9](20190605_SerialDilutionDataDump__col9.png)|
+
+|Here are my plots|
+|---------------|
+|![col4](20190605_SerialDilutionDataDump__col4.png)|
+|![col5](20190605_SerialDilutionDataDump__col5.png)|
+|![col6](20190605_SerialDilutionDataDump__col6.png)|
+|![col7](20190605_SerialDilutionDataDump__col7.png)|
+|![col8](20190605_SerialDilutionDataDump__col8.png)|
+|![col9](20190605_SerialDilutionDataDump__col9.png)|
