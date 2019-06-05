@@ -52,11 +52,11 @@ Diluted the protein stock (BM3 WT heme, same as in [plate selection](P450_Assay_
 >>> 72000.0/conc
 73.21472362144117
 ```
-I measured the absorbance of this thing on a spec here
-...
+I measured the absorbance of this thing on a spec [here](20190605_BM3concCheck_serialDilScheme.csv)
 
 I diluted the compounds from old 10 mM stocks in DMSO. Might do it properly next time. 
 Here's everything in mM 🖕
+
 | ID | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 | ---|---|---|---|---|---|---|---|---|
 |NPG 5%|0.5|0.25|0.125|0.0625|0.03125|0.015625|0.0078125|0.00390625|
@@ -67,3 +67,7 @@ Here's everything in mM 🖕
 I multichannel pipetted 25 uL of each of these into the 384 well plate (Corning 3640) annd made up the remaining 25 uL with my protein. I'll do a conc table later maybe. I span it all at 3700 rpm for 3 minutes then scanned it on the PheraSTAR fs on a 220-800 nm sweep of the wells. The layout looked like this in the end btw:
 
 ![Plate that I did](PlatelayoutIEndedUpDoing6thJune.png)
+
+Here's the platereader [data](SerialDilSchem1.CSV)
+
+Analysis later
