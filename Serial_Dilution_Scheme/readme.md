@@ -94,3 +94,10 @@ I plotted all the columns in the plate, some of them look ok!
 |![col7](20190605_SerialDilutionDataDump__col7.png)|
 |![col8](20190605_SerialDilutionDataDump__col8.png)|
 |![col9](20190605_SerialDilutionDataDump__col9.png)|
+
+|and some difference spectra|
+|---------------|
+|![col4](20190605_SerialDilutionDifferenceSpectra__col6.png	)|
+|![col5](20190605_SerialDilutionDifferenceSpectra__col7.png	)|
+|![col6](20190605_SerialDilutionDifferenceSpectra__col8.png	)|
+|![col7](20190605_SerialDilutionDifferenceSpectra__col9.png	)|
