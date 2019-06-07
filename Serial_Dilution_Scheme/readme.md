@@ -122,3 +122,20 @@ I plotted all the columns in the plate, some of them look ok!
 |![col7](20190605_SerialDilutionMichaelisMented_col9.png	)|
 
 NPG is weird, will need to figure out what's going on there. Maybe in the next round of tests I should be making buffer blanks of each compound or something. Will need to do that at some point anyway.
+
+
+### Next Experiment
+Here are some things that were lacking:
+* The Protein + DMSO standard (because DMSO changes the spin of the BM3 heme sometimes, which may affect my measurements)
+* Blanks for each compound (to correct for compound absorbance)
+* Fresh compound stocks (I used old stocks because I was sad and tired)
+* Repeating the measurements at different time points to see if this assay is at all time sensitive
+* I also pipetted everything manually with a pipette that I haven't seen a calibration report for, which may affect things
+
+So the next experiment will include:
+* DMSO+Protein standard to zero my spectra against
+* Compound blanks! It would be practical to replace on of the repeats with a blank, so each column is self contained
+* Time point repeats - very easy to do. So far I don't suspect that time is a big factor over the time scales that I'm working on, so I might take a measurement every hour or something like that
+* Fresh compound stocks, and maybe a larger array of BM3 substrates to get a feel for things?
+
+I wonder how buffer conditions affect the measurements and reproducibility
