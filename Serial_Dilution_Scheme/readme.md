@@ -67,7 +67,7 @@ I measured the absorbance of this thing on a spec [here](20190605_BM3concCheck_s
 8.941650389473685
 ```
 I diluted the compounds from old 10 mM stocks in DMSO. Might do it properly next time. 
-Here's everything in mM 🖕
+Here's everything in mM 
 
 | ID | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 | ---|---|---|---|---|---|---|---|---|
