@@ -52,8 +52,20 @@ Diluted the protein stock (BM3 WT heme, same as in [plate selection](P450_Assay_
 >>> 72000.0/conc
 73.21472362144117
 ```
-I measured the absorbance of this thing on a spec [here](20190605_BM3concCheck_serialDilScheme.csv)
-
+I measured the absorbance of this thing on a spec [here](20190605_BM3concCheck_serialDilScheme.csv). At some point I'll write a script to do concentration checks for me, but for now:
+```python
+>>> a420 = 1.698913574
+>>> extinction_coef = 95
+>>> a420/extinction_coef
+0.01788330077894737
+>>> 0.01788330077894737 *1000 #mM to uM
+17.88330077894737
+```
+17 uM then, which will be diluted in half to a final concentraion of:
+```python
+>>> 17.88330077894737/2
+8.941650389473685
+```
 I diluted the compounds from old 10 mM stocks in DMSO. Might do it properly next time. 
 Here's everything in mM 🖕
 
