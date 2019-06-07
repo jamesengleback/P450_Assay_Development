@@ -16,7 +16,7 @@ etc
 >>> data['VolDMSO (mM)']= (data['mols']/0.01)*1000 # convert from L to mL
 >>> data['Vol DMSO to add to make 50 mM'] = (data['mols']/0.05)*1000
 >>> data
-                 Compound      Mw   Actual Weight (mg)      mols  VolDMSO (mM)  Vol DMSO to add to make 50 mM
+                 Compound      Mw   Actual Weight (mg)      mols  VolDMSO (mL)  Vol DMSO to add to make 50 mM (mL)
 0             Lauric acid  222.30                  3.9  0.000018      1.754386                       0.350877
 1  Sodium Dodecyl Sulfate  288.40                  7.1  0.000025      2.461859                       0.492372
 2           Plamitic Acid  256.42                 19.6  0.000076      7.643710                       1.528742
