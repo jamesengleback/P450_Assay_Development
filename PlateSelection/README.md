@@ -97,4 +97,4 @@ Interesting how the Centrifugation change the limit of this scattering function.
 * Decided not to try to fit a scattering curve to these traces becasue they all look like the follow similar curves. 
 * Bubbles are an issue and from now on I will spin my plates for at least 3 mins at 3,000 rpm or as fast as I can.
 * Maybe the 'scattering' isn't actually scattering but plate material absorbance. I'd know if I had bothered wih blanks. Will have to do those next time
-* The plate typle doesn't seem to mak much of a diffrence, which is cool because I can use the cheapest ones (Corning 3640 polystyrene untreates) 🤙🤙
+* The plate typle doesn't seem to mak much of a diffrence, which is cool because I can use the cheapest ones (Corning 3640 polystyrene untreates) 
