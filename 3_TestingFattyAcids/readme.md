@@ -1,5 +1,8 @@
 ### Aim
-etc
+Same as before let's do it some more!
+
+### Lab notes
+I made a table of everything I tried to weigh out as substrates. We ran out of N-palmitoylglycine, so none of that today. Sodium Dodecyl Sulfate is a surfactant and potentially a substrate for BM3, 4-PhenylImidazole is a known inhibitor, and should yeild a different type of spin shift which might be interesting, and Arachadonic Acid is another known BM3 substrate.
 
 ```python
 >>> import pandas as pd
@@ -16,6 +19,8 @@ etc
 4           5        Arachadonic Acid  304.48                  5.2  0.017078      1.707830                       0.341566
 
 ```
+I made them 50 mM and then diluted because my vials that I weighed the compounds out into were too small to hold more than 2 ml.
+
 
 Some working for protein cooncentration calcs
 ```python
@@ -34,4 +39,3 @@ Some working for protein cooncentration calcs
 
 ```
 
-Sure messed up there. I'll make the 50 mM aliquots then diute to 10 mM
