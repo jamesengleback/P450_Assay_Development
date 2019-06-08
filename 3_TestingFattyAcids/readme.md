@@ -35,7 +35,6 @@ Some working for protein cooncentration calcs
 96000.0
 >>> 96000.0/prot_conc
 97.61963149525488
->>> 
-
 ```
 
+Here's a UV-Vis trace of the diluted BM3: [data](20190607_BM3conccheck.csv). 
