@@ -39,3 +39,4 @@ Some working for protein cooncentration calcs
 
 Here's a UV-Vis trace of the diluted BM3: [data](20190607_BM3conccheck.csv). 
 ![uvvistrace](20190607_BM3ConcCheckSpec.png)
+8.59 uM of BM3 here, so 4.295 uM final concentration in the plate.
