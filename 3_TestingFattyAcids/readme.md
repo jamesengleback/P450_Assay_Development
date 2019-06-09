@@ -6,6 +6,8 @@ I made a table of everything I tried to weigh out as substrates. We ran out of N
 
 Here's my plate layout this time:
 ![palte](Platelayout7thJune.png)
+The idea was to correct for any potential compound absorbance by having control wells where the compound is at the same concentration as the well above, but there's no protein. There may be some pipetting errors in there because when I was pipetting out my compounds from the dilution plates to the test plate, I forgot to leave a dead volume, which will mess things up.
+
 
 ```python
 >>> import pandas as pd
