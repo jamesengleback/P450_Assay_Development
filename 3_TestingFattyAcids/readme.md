@@ -108,6 +108,7 @@ which isn't far off. Maybe it's fine.
 Here's the plate [data](SerialDilfattyacids.CSV)
 And here are some smaller figures than before.
 
+|  ![fdavc](Lauric_acid_1__Corrected_Spectra.png)|![fdav](Lauric_acid_1_Difference_Spectra.png)|![fdasv](Lauric_acid_1_Michaelis_Menten_Plot.png)|
 
 I calculated some Kds and stuff and put it here in a table:
 ```python
