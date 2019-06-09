@@ -49,17 +49,26 @@ Here's a UV-Vis trace of the diluted BM3: [data](20190607_BM3conccheck.csv).
 
 
 ### Results
-![pfosad](20190607_BM3_WT_LauricAcid_CorrecSpec.png)
-![maricdiff(20190607_BM3_WT_LauricAcid_DiffSpec.png)
-![lauricminment](20190607_BM3_WT_LauricAcid_MiMen.png)
+|Lauric acid|
+|----|
+|![pfosad](20190607_BM3_WT_LauricAcid_CorrecSpec.png)|
+|![maricdiff](20190607_BM3_WT_LauricAcid_DiffSpec.png)|
+|![lauricminment](20190607_BM3_WT_LauricAcid_MiMen.png)|
 
-![gfsvcxzvsag](20190607_BM3_WT_ArachidonicAcid_CorrecSpec.png)
-[vfahtvxz]20190607_BM3_WT_ArachidonicAcid_DiffSpec.png) 
-![rsag43](20190607_BM3_WT_ArachidonicAcid_MiMen.png)
 
-![fsgdrgxcv](20190607_BM3_WT_SDS_CorrecSpec.png)
-![fdaseyt\zxc](20190607_BM3_WT_SDS_DiffSpec.png)
-![21dsafzv5](20190607_BM3_WT_SDS_MiMen.png)
+|Arachidonic acid|
+|----|
+|![gfsvcxzvsag](20190607_BM3_WT_ArachidonicAcid_CorrecSpec.png)|
+|![vfahtvxz](20190607_BM3_WT_ArachidonicAcid_DiffSpec.png) |
+|![rsag43](20190607_BM3_WT_ArachidonicAcid_MiMen.png)|
 
-![cdszvzerf](20190607_BM3_WT_4PhenylImidazole_CorrecSpec.png)
-![54vdzvadfg](20190607_BM3_WT_4PhenylImidazole_DiffSpec.png)
+|SDS|
+|---|
+|![fsgdrgxcv](20190607_BM3_WT_SDS_CorrecSpec.png)|
+|![fdaseyt\zxc](20190607_BM3_WT_SDS_DiffSpec.png)|
+|![21dsafzv5](20190607_BM3_WT_SDS_MiMen.png)|
+
+|4-PhenylImidazole|
+|-------|
+|![cdszvzerf](20190607_BM3_WT_4PhenylImidazole_CorrecSpec.png)|
+|![54vdzvadfg](20190607_BM3_WT_4PhenylImidazole_DiffSpec.png)|
