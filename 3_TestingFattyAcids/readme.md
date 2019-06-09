@@ -45,3 +45,21 @@ Some working for protein cooncentration calcs
 Here's a UV-Vis trace of the diluted BM3: [data](20190607_BM3conccheck.csv). 
 ![uvvistrace](20190607_BM3ConcCheckSpec.png)
 8.59 uM of BM3 here, so 4.295 uM final concentration in the plate.
+
+
+
+### Results
+![pfosad](20190607_BM3_WT_LauricAcid_CorrecSpec.png)
+![maricdiff(20190607_BM3_WT_LauricAcid_DiffSpec.png)
+![lauricminment](20190607_BM3_WT_LauricAcid_MiMen.png)
+
+![gfsvcxzvsag](20190607_BM3_WT_ArachidonicAcid_CorrecSpec.png)
+[vfahtvxz]20190607_BM3_WT_ArachidonicAcid_DiffSpec.png) 
+![rsag43](20190607_BM3_WT_ArachidonicAcid_MiMen.png)
+
+![fsgdrgxcv](20190607_BM3_WT_SDS_CorrecSpec.png)
+![fdaseyt\zxc](20190607_BM3_WT_SDS_DiffSpec.png)
+![21dsafzv5](20190607_BM3_WT_SDS_MiMen.png)
+
+![cdszvzerf](20190607_BM3_WT_4PhenylImidazole_CorrecSpec.png)
+![54vdzvadfg](20190607_BM3_WT_4PhenylImidazole_DiffSpec.png)
