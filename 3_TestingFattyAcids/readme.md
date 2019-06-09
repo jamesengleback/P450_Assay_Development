@@ -98,6 +98,12 @@ I might have messed up some of the compound blanks because I was pipetting from 
 Protein: I did some sketchy calculations again to dilute it, here's the [final trace](20190609BM3ConcCheck.csv). 
 And here's a plot of the trace. I had to dilute it in half the second time to get the a420 between 0 and 1 which apparently is where things are accurate.
 ![plotofotrace](20190609_BM3ConcCheckSpec.png)
+Though
+```python
+>>> 17.66/2
+8.83
+```
+which isn't far off. Maybe it's fine.
 
 Here's the plate [data](SerialDilfattyacids.CSV)
 And here are some smaller figures than before.
