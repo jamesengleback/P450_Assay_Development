@@ -107,3 +107,26 @@ which isn't far off. Maybe it's fine.
 
 Here's the plate [data](SerialDilfattyacids.CSV)
 And here are some smaller figures than before.
+
+
+I calculated some Kds and stuff and put it here in a table:
+```python
+                             Vmax           Kd       R^2
+protein+DMSO         2.669067e-01    -0.226848  0.417604
+Lauric acid 1       -2.150494e-35     2.000000      -inf
+Lauric acid 2        9.031120e-03    36.623412  0.393817
+Lauric acid 3        3.229573e-02     5.355799  0.157139
+Lauric acid 4        5.289297e-02   236.417082  0.642277
+Lauric acid 5        8.866792e-02   490.473143  0.506235
+Arachadonic acid 1   3.505953e-02    12.662041  0.470197
+Arachadonic acid 2   3.729962e-01  3493.117058  0.564861
+Arachadonic acid 3   4.091849e-01    88.242838  0.983755
+Arachadonic acid 4   4.082436e-01    82.663486  0.980789
+Arachadonic acid 5   4.300772e-01    96.269076  0.987716
+4-Phenylimidazole 1  4.183990e-01    79.252519  0.967969
+4-Phenylimidazole 2  4.093374e-01    71.716778  0.983733
+4-Phenylimidazole 3  4.176815e-02     5.129344  0.153933
+4-Phenylimidazole 4  3.484336e-02     3.730405  0.464898
+4-Phenylimidazole 5  3.837007e-02    17.917318  0.748812
+```
+I'll get the stdev for each compound ater, but it won't be very good. Maybe a good test later on will be to compare lots of stdevs for lots of compounds, between plates and old school titrations??
