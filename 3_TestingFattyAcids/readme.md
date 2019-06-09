@@ -90,3 +90,11 @@ This is exciting and promising. I came in to the lab on Sunday 9th June to have 
 3. 4-PhenylImidazole (I should probably prepare myself for some inhibitors at screen time)
 
 I started with a fresh Corning 3640 plate (which it turns out aren't non-treated, I should really have a look at non-treated, cheap and cheerful plates soon). Here's my new layout:
+
+![platelayout2](20190607Platelayout.png)
+
+I might have messed up some of the compound blanks because I was pipetting from a deep well mother plate and I don't think my tips got all the way to the bottom each time - just a feeling. Eventually, once I'm really good at this or can get a robot to do it then I should compare againts titrations (but I hate titrations so I'm only doing them when I really need to). 
+
+Protein: I did some sketchy calculations again to dilute it, here's the final trace: xxxx. 
+Here's the plate data:
+And here are some smaller figures than before.
