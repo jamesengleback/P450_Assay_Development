@@ -2,7 +2,7 @@
 Same as before let's do it some more!
 
 ### Lab notes
-I made a table of everything I tried to weigh out as substrates. We ran out of N-palmitoylglycine, so none of that today. Sodium Dodecyl Sulfate is a surfactant and potentially a substrate for BM3, 4-PhenylImidazole is a known inhibitor, and should yeild a different type of spin shift which might be interesting, and Arachadonic Acid is another known BM3 substrate.
+I made a table of everything I tried to weigh out as substrates. We ran out of N-palmitoylglycine, so none of that today. Sodium Dodecyl Sulfate is a surfactant and potentially a substrate for BM3, 4-PhenylImidazole is a known inhibitor, and should yeild a different type of spin shift which might be interesting, and Arachadonic Acid is another known BM3 substrate. I decided to use 4% v/v DMSO in the assay plate because 2.5% might have led to substrate precipitation and 5% is right on the line of how much I heard that BM3 can take.
 
 Here's my plate layout this time:
 ![palte](Platelayout7thJune.png)
