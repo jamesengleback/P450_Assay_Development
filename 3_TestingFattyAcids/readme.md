@@ -107,7 +107,7 @@ which isn't far off. Maybe it's fine.
 
 Here's the plate [data](SerialDilfattyacids.CSV)
 And here are some smaller figures than before.
-[Well I cba to put them in here rn, but they're all the ones with the naming convention that goes like: 'Arachadonic_acid_5_Difference_Spectra.png'](Arachadonic_acid_5_Difference_Spectra.png) etc.
+Well I cba to put them in here rn, but they're all the ones with the naming convention that goes like: ['Arachadonic_acid_5_Difference_Spectra.png'](Arachadonic_acid_5_Difference_Spectra.png) etc.
 
 I calculated some Kds and stuff and put it here in a table:
 ```python
