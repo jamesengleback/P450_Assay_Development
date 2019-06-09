@@ -4,6 +4,9 @@ Same as before let's do it some more!
 ### Lab notes
 I made a table of everything I tried to weigh out as substrates. We ran out of N-palmitoylglycine, so none of that today. Sodium Dodecyl Sulfate is a surfactant and potentially a substrate for BM3, 4-PhenylImidazole is a known inhibitor, and should yeild a different type of spin shift which might be interesting, and Arachadonic Acid is another known BM3 substrate.
 
+Here's my plate layout this time:
+![palte](Platelayout7thJune.png)
+
 ```python
 >>> import pandas as pd
 >>> data = pd.read_csv('20190607_SubstrateWeighing.csv')
