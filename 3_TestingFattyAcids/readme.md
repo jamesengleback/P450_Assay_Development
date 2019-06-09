@@ -50,7 +50,7 @@ Here's a UV-Vis trace of the diluted BM3: [data](20190607_BM3conccheck.csv).
 
 ### Results
 |Compound|Comments|
-|-------|
+|-------|-----|
 |Lauric Acid|Bad, it looks like I've not dispensed it properly|
 |Arachadionic Acid|Looks Good|
 |SDS|Looks good|
