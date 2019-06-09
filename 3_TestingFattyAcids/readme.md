@@ -82,3 +82,11 @@ Here's a UV-Vis trace of the diluted BM3: [data](20190607_BM3conccheck.csv).
 |-------|
 |![cdszvzerf](20190607_BM3_WT_4PhenylImidazole_CorrecSpec.png)|
 |![54vdzvadfg](20190607_BM3_WT_4PhenylImidazole_DiffSpec.png)|
+
+
+This is exciting and promising. I came in to the lab on Sunday 9th June to have another stab at it. It was a hastily thought out experimental run, probably made loads of mistakes but it's all practice isn't it? This time I decided to do 5 repeats of the following substrates:
+1. Lauric acid (to see if I could make up for last time)
+2. Arachadnoic acid (because it came out so well last time)
+3. 4-PhenylImidazole (I should probably prepare myself for some inhibitors at screen time)
+
+I started with a fresh Corning 3640 plate (which it turns out aren't non-treated, I should really have a look at non-treated, cheap and cheerful plates soon). Here's my new layout:
