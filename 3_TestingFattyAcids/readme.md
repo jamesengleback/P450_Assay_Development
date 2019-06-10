@@ -129,4 +129,6 @@ Arachadonic acid 5   4.300772e-01    96.269076  0.987716
 4-Phenylimidazole 4  3.484336e-02     3.730405  0.464898
 4-Phenylimidazole 5  3.837007e-02    17.917318  0.748812
 ```
-I'll get the stdev for each compound ater, but it won't be very good. Maybe a good test later on will be to compare lots of stdevs for lots of compounds, between plates and old school titrations??
+I'll get the stdev for each compound ater, but it won't be very good. Maybe the R2 is a better metric, since it'll indicate how close to a theoretical michaelis menten curve my data is? Maybe a good test later on will be to compare lots of stdevs for lots of compounds, between plates and old school titrations??
+
+Right now, I'm chalking up this variability to bad pipetting. I'll do better next time
