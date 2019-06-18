@@ -40,4 +40,4 @@ Here's some data:
 |DMSO|![vfsadgvzvcz](protein_and_dmso_Corrected_Spectra_PM.png)||
 |Lauric Acid|![gvfsabvdz](lauric_acid_1_Corrected_Spectra_PM.png)|![fd\cds\vvfss](lauric_acid_2_Corrected_Spectra_PM.png)|
 |Arachadonic Acid|![fxgdjfdz](arachadnic_acid_1_Corrected_Spectra_PM.png)|![grsgfzcxzg](arachadnic_acid_2_Corrected_Spectra_PM.png)|
-|4-PhenylImidazole|![gfdsavcx](4-Phenylimidazole_1_Corrected_Spectra_PM.png)|![frsgfzhhjz](4-Phenylimidazole_2_Corrected_Spectra_PM)|
+|4-PhenylImidazole|![gfdsavcx](4-Phenylimidazole_1_Corrected_Spectra_PM.png)|![frsgfzhhjz](4-Phenylimidazole_2_Corrected_Spectra_PM.png)|
