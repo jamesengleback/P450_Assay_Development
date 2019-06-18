@@ -2,8 +2,8 @@
 
 
 ### Lab Notes
-* Defrosted some BM3 Heme WT from -80 storage. Calculated the conc as 5.9
-figure
+* Defrosted some BM3 Heme WT from -80 storage. 
+![figure](20190618_BM3StockConc.png	)
 ```python
 >>> 5.9/0.005
 1180.0
