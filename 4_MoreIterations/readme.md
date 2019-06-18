@@ -29,4 +29,5 @@ I did a couple of plots  but it looks like I donked up the pipetting again, so I
 ##### Same as before, let's do it some more
 
 Here's my plate layout:
+
 ![plate2](20190618_Platelayout (1).png)
