@@ -9,3 +9,5 @@
 1180.0
 ```
 1180.0 uM = 1.18 mM
+
+5 in 1000 looked good so I'll do 10 ml of that, which is 50 uL of protein.
