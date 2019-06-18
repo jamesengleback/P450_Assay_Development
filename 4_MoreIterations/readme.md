@@ -30,4 +30,4 @@ I did a couple of plots  but it looks like I donked up the pipetting again, so I
 
 Here's my plate layout:
 
-![plate2](20190618_Platelayout (1).png)
+![plate2](20190618_PlatelayoutPM.png)
