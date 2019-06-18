@@ -11,7 +11,10 @@
 1180.0 uM = 1.18 mM
 
 5 in 1000 looked good so I'll do 10 ml of that, which is 50 uL of protein.
-Here's a conc check:
+Here's a conc check added to the previous trace session:
+[data](20190618_BM3StckConcCheck2.csv	) which I did the same as before, here's another [figure](20190618_BM3StockConc_2.png) if you're interested 
+
 
 Here's the plate layout:
 ![Platelayout](20190618_Platelayout.png)
+
