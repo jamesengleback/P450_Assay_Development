@@ -2,7 +2,7 @@
 
 
 ### Lab Notes
-* Defrosted some BM3 Heme WT from -80 storage. 
+* Defrosted some BM3 Heme WT from -80 storage. Took a UV-Vis trace diluted 5 in 1000 in 100 mM KPi pH7 and generated the figure below and the conc with [this script](20190618_ProtinConcCheck.py	)
 ![figure](20190618_BM3StockConc.png	)
 ```python
 >>> 5.9/0.005
