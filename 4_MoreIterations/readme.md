@@ -18,3 +18,4 @@ Here's a conc check added to the previous trace session:
 Here's the plate layout:
 ![Platelayout](20190618_Platelayout.png)
 
+I'm doing my serial diutions in a PCR plate that I have to hand (last time a deep well plate went badly, ended up pipetting up a lot of air). Each of the PCR plate wells needs 150 ul of substrate and buffer plus some dead volume so I'm doing 200 ul. The first wells are going to loose half their volume
