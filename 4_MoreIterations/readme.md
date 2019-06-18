@@ -22,3 +22,5 @@ I'm doing my serial diutions in a PCR plate that I have to hand (last time a dee
 
 ###### 30 mins later
 I did the above, which seemed to work, except I'm sure I mixed up some wells because I'm a stoopid. Whatever, I span the plate at ~ 4000 rpm for 3-4 mins and then took spectral traces of the used wells on the Pherastar FS, here's the [data](20190618_Assay1.CSV).
+
+I did a couple of plots  but it looks like I donked up the pipetting again, so I'm going again!
