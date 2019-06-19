@@ -1,5 +1,6 @@
-### header
-
+### Iteration 4!!
+##### Background
+I'm geting there, I'm sure that the assay works and that all of the problems have one common denominator - me. I suck a pipetting! I could either be getting mixed up on making the mother plate or on the assay plate - probably the assay plate because it's easy to losse count with that. Maybe I'm also failing the mix/suspend the compounds in the mother plate during my serial dilutions, who knows. More iterations will tell!
 
 ### Lab Notes
 * Defrosted some BM3 Heme WT from -80 storage. Took a UV-Vis trace diluted 5 in 1000 in 100 mM KPi pH7 and generated the figure below and the conc with [this script](20190618_ProtinConcCheck.py	)
@@ -60,3 +61,5 @@ Compound|Rep 1|Rep 2|
 |Lauric Acid|![gvfsabvdz](lauric_acid_1_Michaelis_Menten_PM.png)|![fd\cds\vvfss](lauric_acid_2_Michaelis_Menten_PM.png)|
 |Arachadonic Acid|![fxgdjfdz](arachadnic_acid_1_Michaelis_Menten_PM.png)|![grsgfzcxzg](arachadnic_acid_2_Michaelis_Menten_PM.png)|
 |4-PhenylImidazole|![gfdsavcx](4-Phenylimidazole_1_Michaelis_Menten_PM.png)|![frsgfzhhjz](4-Phenylimidazole_2_Michaelis_Menten_PM.png)|
+
+Rep 2 of arachadonic acid and 4-phenyimidazole are the only ones that went well this time. 
