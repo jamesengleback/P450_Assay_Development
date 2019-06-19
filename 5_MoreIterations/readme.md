@@ -13,14 +13,11 @@ Eventually, it will be good to have a robotics workflow for all of this, but one
 I think the first thing I need to do is to get some consistent results with Arachadonic acid and 4-Phenylimidazole. So far I haven't been making repeats in the mother plate, so maybe I'll try that. I don't think I should draw more than about 2 or 3 repeats from each column in the (PCR) mother plate, which only just fits 300 ul in each well.
 
 At least I'll have company
-
-LabFren.jpeg)
+![](LabFren.jpeg)
 
 
 ### plate layout
-
-
-20190619_1_Platelayout.png)
+![](20190619_1_Platelayout.png)
 
 #### How did it go?
 I learnt:
