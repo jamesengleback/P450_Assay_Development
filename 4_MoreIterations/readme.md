@@ -50,3 +50,13 @@ Difference Spectra:
 |Lauric Acid|![gvfsabvdz](lauric_acid_1_Difference_Spectra_PM.png)|![fd\cds\vvfss](lauric_acid_2_Difference_Spectra_PM.png)|
 |Arachadonic Acid|![fxgdjfdz](arachadnic_acid_1_Difference_Spectra_PM.png)|![grsgfzcxzg](arachadnic_acid_2_Difference_Spectra_PM.png)|
 |4-PhenylImidazole|![gfdsavcx](4-Phenylimidazole_1_Difference_Spectra_PM.png)|![frsgfzhhjz](4-Phenylimidazole_2_Difference_Spectra_PM.png)|
+
+
+Michaelis_Menten
+
+Compound|Rep 1|Rep 2|
+|---|---|---|
+|DMSO|![vfsadgvzvcz](protein_and_dmso_Michaelis_Menten_PM.png)||
+|Lauric Acid|![gvfsabvdz](lauric_acid_1_Michaelis_Menten_PM.png)|![fd\cds\vvfss](lauric_acid_2_Michaelis_Menten_PM.png)|
+|Arachadonic Acid|![fxgdjfdz](arachadnic_acid_1_Michaelis_Menten_PM.png)|![grsgfzcxzg](arachadnic_acid_2_Michaelis_Menten_PM.png)|
+|4-PhenylImidazole|![gfdsavcx](4-Phenylimidazole_1_Michaelis_Menten_PM.png)|![frsgfzhhjz](4-Phenylimidazole_2_Michaelis_Menten_PM.png)|
