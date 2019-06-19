@@ -41,3 +41,12 @@ Here's some data:
 |Lauric Acid|![gvfsabvdz](lauric_acid_1_Corrected_Spectra_PM.png)|![fd\cds\vvfss](lauric_acid_2_Corrected_Spectra_PM.png)|
 |Arachadonic Acid|![fxgdjfdz](arachadnic_acid_1_Corrected_Spectra_PM.png)|![grsgfzcxzg](arachadnic_acid_2_Corrected_Spectra_PM.png)|
 |4-PhenylImidazole|![gfdsavcx](4-Phenylimidazole_1_Corrected_Spectra_PM.png)|![frsgfzhhjz](4-Phenylimidazole_2_Corrected_Spectra_PM.png)|
+
+Difference Spectra:
+
+|Compound|Rep 1|Rep 2|
+|---|---|---|
+|DMSO|![vfsadgvzvcz](protein_and_dmso_Difference_PM.png)||
+|Lauric Acid|![gvfsabvdz](lauric_acid_1_Difference_Spectra_PM.png)|![fd\cds\vvfss](lauric_acid_2_Difference_Spectra_PM.png)|
+|Arachadonic Acid|![fxgdjfdz](arachadnic_acid_1_Difference_Spectra_PM.png)|![grsgfzcxzg](arachadnic_acid_2_Difference_Spectra_PM.png)|
+|4-PhenylImidazole|![gfdsavcx](4-Phenylimidazole_1_Difference_Spectra_PM.png)|![frsgfzhhjz](4-Phenylimidazole_2_Difference_Spectra_PM.png)|
