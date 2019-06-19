@@ -14,12 +14,13 @@ I think the first thing I need to do is to get some consistent results with Arac
 
 At least I'll have company
 
-![](/home/james/Documents/Work/201906_PlateAssayDevelopment/5_More_Iterations/LabFren.jpeg)
+LabFren.jpeg)
 
 
 ### plate layout
 
-![](/home/james/Documents/Work/201906_PlateAssayDevelopment/5_More_Iterations/20190619_1_Platelayout.png)
+
+20190619_1_Platelayout.png)
 
 #### How did it go?
 I learnt:
@@ -40,8 +41,7 @@ $ python3 ProtinConcCheck.py
 Name: P450 conc/uM, dtype: float64
 ```
 
-I made up the plate, which took maybe 15-20 minutes? Then span it in the Cai lab's centrifuge at 1000 rpms for 4 minutes, then took a scan on the Pherastar FS from 220-800 nm. Here's the [data](20190619_boi.CSV)
-
+I made up the plate, which took maybe 15-20 minutes? Then span it in the Cai lab's centrifuge at 1000 rpms for 4 minutes, then took a scan on the Pherastar FS from 220-800 nm. Here's the [data](20190619_boi.CSV) and here's my [script](Plateanalysis20190618.py)
 
 ## Arachadonic Acid specs look Bangin'!!!!!!!
 
