@@ -73,6 +73,35 @@ Scanned the wells for wavelengths 220-800 nm on the Pherastar FS. It took about 
 |![](Lauric_acid_3.2_Corrected_Spectra_PM.png)|![]( Lauric_acid_3.2_Difference_Spectra_PM.png)| ![](Lauric_acid_3.2_Michaelis_Menten_PM.png)|
 
 It looks like Lauric and Palmitic acids aren't introducing a shift at all. Here are some potential reasons:
-1. These things aren't even substrates anyway (easy to check in literature)
-2. These things are precipitating
-3. I made up my stocks wrong
+1. **These things aren't even substrates anyway (easy to check in literature)**
+2. **These things are precipitating**
+3. **I made up my stocks wrong**
+
+### I'm going to adress these 1 by 1
+
+###### 1. These things aren't even substrates anyway
+Pretty sure they are, put some evidence in here. I think I have some titrations on my drive.
+
+
+###### 2. These things are precipitating
+```python
+>>> from rdkit import Chem
+>>> aracadonic_acid = Chem.MolFromSmiles('CCCCCC=CCC=CCC=CCC=CCCCC(=O)O')
+>>> lauric_acid = Chem.MolFromSmiles('CCCCCCCCCCCC(=O)O')
+>>> palmitic_acid = Chem.MolFromSmiles('CCCCCCCCCCCCCCCC(=O)O')
+>>> help(Chem)
+
+>>> aracadonic_acid = Chem.AddHs(aracadonic_acid)
+>>> lauric_acid = Chem.AddHs(lauric_acid)
+>>> palmitic_acid = Chem.AddHs(palmitic_acid)
+>>> Descriptors.MolLogP(aracadonic_acid)
+6.216700000000006
+>>> Descriptors.MolLogP(lauric_acid)
+3.991900000000002
+>>> Descriptors.MolLogP(palmitic_acid)
+5.552300000000005
+```
+It's probably not a LogP problem
+
+##### 3. I made up my stocks wrong
+Probably this one, I can test this by repeating my experiment tomorrow with fresh stocks to see what's up.
