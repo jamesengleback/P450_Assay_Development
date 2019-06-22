@@ -76,6 +76,7 @@ It looks like Lauric and Palmitic acids aren't introducing a shift at all. Here 
 1. **These things aren't even substrates anyway (easy to check in literature)**
 2. **These things are precipitating**
 3. **I made up my stocks wrong**
+4. **The fatty acids are sticking to the lipophilic plate surface (I'm still using the treated plates because they're in plentiful suppy)**
 
 ### I'm going to adress these 1 by 1
 
@@ -105,3 +106,6 @@ It's probably not a LogP problem
 
 ##### 3. I made up my stocks wrong
 Probably this one, I can test this by repeating my experiment tomorrow with fresh stocks to see what's up.
+
+##### 4. Sticking to the plates
+Could be this if I rule out the above
