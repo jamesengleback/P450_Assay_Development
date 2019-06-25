@@ -90,8 +90,8 @@ def plotPlateData(data, title):
     plt.xlabel('Wavlength nm')
     plt.ylabel('Absorbance')
     plt.legend(concs, title = 'Substrate concentration in uM')
-    plt.show()
-    #plt.savefig((title + ' Corrected Spectra PM.png').replace(' ','_'))
+    #plt.show()
+    plt.savefig((title + ' Corrected Spectra PM.png').replace(' ','_'))
 
 def plotPlateDifferenceSpectra(data,pureprotein,title):
     data.reset_index(drop=True,inplace=True)
@@ -121,8 +121,8 @@ def plotPlateDifferenceSpectra(data,pureprotein,title):
     plt.xlabel('Wavlength nm')
     plt.ylabel('Change in Absorbance')
     plt.legend(concs, title = 'Substrate concentration in uM',loc='right')
-    plt.show()
-    #plt.savefig((title + ' Difference Spectra PM.png').replace(' ','_'))
+    #plt.show()
+    plt.savefig((title + ' Difference Spectra PM.png').replace(' ','_'))
 
 def calculateDiffDiff(data,pureprotein):
     data=data.subtract(pureprotein,axis=1)
@@ -165,8 +165,8 @@ def Plot_MichaelisMenten(DiffDiff,concs, title):
     +'Vmax = '+str(np.around(vmax,2))+'\n'\
     +'R squared = '+str(np.around(r_squared,2)))
 
-    plt.show()
-    #plt.savefig((title + ' Michaelis Menten PM.png').replace(' ','_'))
+    #plt.show()
+    plt.savefig((title + ' Michaelis Menten PM.png').replace(' ','_'))
 
 
 def subtract_evryOtherRow(data):
@@ -194,7 +194,7 @@ def StickItAllTogether(path, selection,concs,title):
     Little bit of selecting the right columns
     '''
     well_columns = pd.Series(data.index).str.extract(r'(\d+)').astype(int)
-    pureprotein_andDMSO = data.iloc[well_columns[well_columns==13].dropna().index]
+    pureprotein_andDMSO = data.iloc[well_columns[well_columns==1].dropna().index] #### important one!
     well_columns=well_columns[well_columns==selection].dropna().index
     data=data.iloc[well_columns]
     diffdiff=calculateDiffDiff(data.reset_index(drop=True),pureprotein_andDMSO.reset_index(drop=True))
@@ -228,9 +228,8 @@ titles = ['protein and dmso',
 'Lauric acid 2.1','Palmitic acid 2.2',
 'Palmitic acid 3.1','Palmitic acid 3.2'
 ]
-generate_markdown_Table(titles)
-'''
+#generate_markdown_Table(titles)
 count=0
 for i in range(1,20):
     StickItAllTogether('20190625_boi.CSV',i,concs, titles[count])
-    count+=1'''
+    count+=1
