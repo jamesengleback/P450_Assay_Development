@@ -90,8 +90,8 @@ def plotPlateData(data, title):
     plt.xlabel('Wavlength nm')
     plt.ylabel('Absorbance')
     plt.legend(concs, title = 'Substrate concentration in uM')
-    #plt.show()
-    plt.savefig((title + ' Corrected Spectra PM.png').replace(' ','_'))
+    plt.show()
+    #plt.savefig((title + ' Corrected Spectra PM.png').replace(' ','_'))
 
 def plotPlateDifferenceSpectra(data,pureprotein,title):
     data.reset_index(drop=True,inplace=True)
@@ -221,16 +221,16 @@ titles = ['protein and dmso',
 'arachadnic acid 1.1','arachadnic acid 1.2',
 'arachadnic acid 2.1','arachadnic acid 2.2',
 'arachadnic acid 3.1','arachadnic acid 3.2',
-'SDS 1.1','SDS 1.2',
-'SDS 2.1','SDS 2.2',
-'SDS 3.1','SDS 3.2',
-'Lauric acid 1.1','Lauric acid 1.2',
-'Lauric acid 2.1','Lauric acid 2.2',
-'Lauric acid 3.1','Lauric acid 3.2'
+'Lauric Acid 1.1','Lauric Acid 1.2',
+'Lauric Acid 2.1','Lauric Acid 2.2',
+'Lauric Acid 3.1','Lauric Acid 3.2',
+'Palmitic acid 1.1','Palmitic acid 1.2',
+'Lauric acid 2.1','Palmitic acid 2.2',
+'Palmitic acid 3.1','Palmitic acid 3.2'
 ]
 generate_markdown_Table(titles)
 '''
 count=0
 for i in range(1,20):
-    StickItAllTogether('20190622_gal.CSV',i,concs, titles[count])
+    StickItAllTogether('20190625_boi.CSV',i,concs, titles[count])
     count+=1'''

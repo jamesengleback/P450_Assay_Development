@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = '~/Documents/Work/201906_PlateAssayDevelopment/7_Moreiterations/'+'20190622_BM3conccheck.csv'
+path = '~/Documents/Work/201906_PlateAssayDevelopment/7_Moreiterations/'+'20190625_PM_BM3conccheck.csv'
 
 class dataset:
     def __init__(self, path):

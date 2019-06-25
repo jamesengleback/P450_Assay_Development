@@ -67,4 +67,64 @@ cool.
 |![](Lauric_acid_3.2_Corrected_Spectra_PM.png)|![](Lauric_acid_3.2_Difference_Spectra_PM.png)|![](Lauric_acid_3.2_Michaelis_Menten_PM.png)|
 
 
-FFS what have I done 
+FFS what have I done
+
+#### 20190625
+Back again. Let me pick up where I left off: Weird results so I'm checking if my stocks are ok. I did some titrations on one of the virus-riddled Cary UV-Vis specs, but my pen drive isn't affected so we're good. The royal we.
+* [BM3 conc check](20190625_BM3conccheck.csv)
+* [BM3 with lauric acid](20190625_BM3Lauric1.csv)
+* [More BM3 with Lauric acid](20190625_BM3Lauric2.csv)
+* [Lauric acid again except after centrifuging](20190625_BM3Lauric3centrifugepot.csv )
+* [Palmitic acid before spinning down my protein](20190625_BM3Palmiticprecentrifugepot.csv)
+* [Palmitic acid except after spinning the protein](20190625_BM3Palmiticcentrifugepot.csv)
+
+A lot of precipitation, at this point I'm thinking the problem is my protein, it's been out for some time. Results were slightly better with Lauric acid after I span the concentrated Protein at 13000 rpm for about 10 mins at 4 degrees.
+
+* I used [this script](CaryUVVisProcessing.py)
+
+|Specs|
+|------|
+|![](20190625_BM3conccheck.csvRawSpec.png)| |![](20190625_BM3Lauric2.csvRawSpec.png)|
+|![](20190625_BM3Lauric1.csvRawSpec.png)|
+|![](20190625_BM3Lauric3centrifugepot.csvRawSpec.png)|
+|![](20190625_BM3Palmiticprecentrifugepot.csvRawSpec.png)|
+|![](20190625_BM3Palmiticcentrifugepot.csvRawSpec.png)|
+
+Yep looks like a protein problem.
+I span the protein down at 13000 rpm again at 4 deg and then transferred it to a fresh tube.
+
+Made fresh assay buffer (100 mM KPi, pH7, filtered) and diluted the protein in it. Here's the [trace](20190625_PM_BM3conccheck.csv)
+
+```python
+ ProtinConcCheck.py
+0   -0.017053
+1    3.892163
+Name: P450 conc/uM, dtype: float64
+```
+
+then set up my plate like this:
+![](assets/readme-ec04ca80.png)
+
+And here's the [data](20190625_boi.CSV)
+
+|Raw spectra|Difference Spectra|Michaelis Menten Plot|
+|------------|-------------|----------|
+|![](protein_and_dmso_Corrected_Spectra_PM.png)|![](protein_and_dmso_Difference_Spectra_PM.png)|![](protein_and_dmso_Michaelis_Menten_PM.png)|
+|![](arachadnic_acid_1.1_Corrected_Spectra_PM.png)|![](arachadnic_acid_1.1_Difference_Spectra_PM.png)|![](arachadnic_acid_1.1_Michaelis_Menten_PM.png)|
+|![](arachadnic_acid_1.2_Corrected_Spectra_PM.png)|![](arachadnic_acid_1.2_Difference_Spectra_PM.png)|![](arachadnic_acid_1.2_Michaelis_Menten_PM.png)|
+|![](arachadnic_acid_2.1_Corrected_Spectra_PM.png)|![](arachadnic_acid_2.1_Difference_Spectra_PM.png)|![](arachadnic_acid_2.1_Michaelis_Menten_PM.png)|
+|![](arachadnic_acid_2.2_Corrected_Spectra_PM.png)|![](arachadnic_acid_2.2_Difference_Spectra_PM.png)|![](arachadnic_acid_2.2_Michaelis_Menten_PM.png)|
+|![](arachadnic_acid_3.1_Corrected_Spectra_PM.png)|![](arachadnic_acid_3.1_Difference_Spectra_PM.png)|![](arachadnic_acid_3.1_Michaelis_Menten_PM.png)|
+|![](arachadnic_acid_3.2_Corrected_Spectra_PM.png)|![](arachadnic_acid_3.2_Difference_Spectra_PM.png)|![](arachadnic_acid_3.2_Michaelis_Menten_PM.png)|
+|![](Lauric_Acid_1.1_Corrected_Spectra_PM.png)|![](Lauric_Acid_1.1_Difference_Spectra_PM.png)|![](Lauric_Acid_1.1_Michaelis_Menten_PM.png)|
+|![](Lauric_Acid_1.2_Corrected_Spectra_PM.png)|![](Lauric_Acid_1.2_Difference_Spectra_PM.png)|![](Lauric_Acid_1.2_Michaelis_Menten_PM.png)|
+|![](Lauric_Acid_2.1_Corrected_Spectra_PM.png)|![](Lauric_Acid_2.1_Difference_Spectra_PM.png)|![](Lauric_Acid_2.1_Michaelis_Menten_PM.png)|
+|![](Lauric_Acid_2.2_Corrected_Spectra_PM.png)|![](Lauric_Acid_2.2_Difference_Spectra_PM.png)|![](Lauric_Acid_2.2_Michaelis_Menten_PM.png)|
+|![](Lauric_Acid_3.1_Corrected_Spectra_PM.png)|![](Lauric_Acid_3.1_Difference_Spectra_PM.png)|![](Lauric_Acid_3.1_Michaelis_Menten_PM.png)|
+|![](Lauric_Acid_3.2_Corrected_Spectra_PM.png)|![](Lauric_Acid_3.2_Difference_Spectra_PM.png)|![](Lauric_Acid_3.2_Michaelis_Menten_PM.png)|
+|![](Palmitic_acid_1.1_Corrected_Spectra_PM.png)|![](Palmitic_acid_1.1_Difference_Spectra_PM.png)|![](Palmitic_acid_1.1_Michaelis_Menten_PM.png)|
+|![](Palmitic_acid_1.2_Corrected_Spectra_PM.png)|![](Palmitic_acid_1.2_Difference_Spectra_PM.png)|![](Palmitic_acid_1.2_Michaelis_Menten_PM.png)|
+|![](Lauric_acid_2.1_Corrected_Spectra_PM.png)|![](Lauric_acid_2.1_Difference_Spectra_PM.png)|![](Lauric_acid_2.1_Michaelis_Menten_PM.png)|
+|![](Palmitic_acid_2.2_Corrected_Spectra_PM.png)|![](Palmitic_acid_2.2_Difference_Spectra_PM.png)|![](Palmitic_acid_2.2_Michaelis_Menten_PM.png)|
+|![](Palmitic_acid_3.1_Corrected_Spectra_PM.png)|![](Palmitic_acid_3.1_Difference_Spectra_PM.png)|![](Palmitic_acid_3.1_Michaelis_Menten_PM.png)|
+|![](Palmitic_acid_3.2_Corrected_Spectra_PM.png)|![](Palmitic_acid_3.2_Difference_Spectra_PM.png)|![](Palmitic_acid_3.2_Michaelis_Menten_PM.png)|
