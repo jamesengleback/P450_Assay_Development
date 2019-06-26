@@ -107,6 +107,7 @@ then set up my plate like this:
 
 And here's the [data](20190625_boi.CSV)
 
+
 |Raw spectra|Difference Spectra|Michaelis Menten Plot|
 |------------|-------------|----------|
 |![](protein_and_dmso_Corrected_Spectra_PM.png)|![](protein_and_dmso_Difference_Spectra_PM.png)|![](protein_and_dmso_Michaelis_Menten_PM.png)|
@@ -128,3 +129,78 @@ And here's the [data](20190625_boi.CSV)
 |![](Palmitic_acid_2.2_Corrected_Spectra_PM.png)|![](Palmitic_acid_2.2_Difference_Spectra_PM.png)|![](Palmitic_acid_2.2_Michaelis_Menten_PM.png)|
 |![](Palmitic_acid_3.1_Corrected_Spectra_PM.png)|![](Palmitic_acid_3.1_Difference_Spectra_PM.png)|![](Palmitic_acid_3.1_Michaelis_Menten_PM.png)|
 |![](Palmitic_acid_3.2_Corrected_Spectra_PM.png)|![](Palmitic_acid_3.2_Difference_Spectra_PM.png)|![](Palmitic_acid_3.2_Michaelis_Menten_PM.png)|
+
+And then I decided to do the whole thing again with a non-treated plate. I'll get the specs later. I ended up doing a couple of time points because I forgot to mix the plate and I wanted to see if I could let diffusion do the work and save some pipette tips.
+
+Here are the three time points (hour apart)
+* [one](20190625_regularplate_boi.CSV)
+* [two](20190625_regularplate_boi2.CSV)
+* [three](20190625_regularplate_boi3.CSV)
+
+Smoked a lot of cigs whilst I was waiting. Should stop.
+
+|Raw spectra|Difference Spectra|Michaelis Menten Plot|
+|------------|-------------|----------|
+|![](Regular_plate1protein_and_dmso_Corrected_Spectra_PM.png)|![](Regular_plate1protein_and_dmso_Difference_Spectra_PM.png)|![](Regular_plate1protein_and_dmso_Michaelis_Menten_PM.png)|
+|![](Regular_plate1arachadnic_acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1arachadnic_acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate1arachadnic_acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1arachadnic_acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate1arachadnic_acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1arachadnic_acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate1arachadnic_acid_3.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Lauric_Acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Lauric_Acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Lauric_Acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Lauric_Acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Lauric_Acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Lauric_Acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate1Lauric_Acid_3.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Palmitic_acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Palmitic_acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Lauric_acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate1Lauric_acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate1Lauric_acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Palmitic_acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Palmitic_acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate1Palmitic_acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate1Palmitic_acid_3.2_Michaelis_Menten_PM.png)|
+
+|Raw spectra|Difference Spectra|Michaelis Menten Plot|
+|------------|-------------|----------|
+|![](Regular_plate2protein_and_dmso_Corrected_Spectra_PM.png)|![](Regular_plate2protein_and_dmso_Difference_Spectra_PM.png)|![](Regular_plate2protein_and_dmso_Michaelis_Menten_PM.png)|
+|![](Regular_plate2arachadnic_acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2arachadnic_acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate2arachadnic_acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2arachadnic_acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate2arachadnic_acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2arachadnic_acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate2arachadnic_acid_3.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Lauric_Acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Lauric_Acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Lauric_Acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Lauric_Acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Lauric_Acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Lauric_Acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate2Lauric_Acid_3.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Palmitic_acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Palmitic_acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Lauric_acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate2Lauric_acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate2Lauric_acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Palmitic_acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Palmitic_acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate2Palmitic_acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate2Palmitic_acid_3.2_Michaelis_Menten_PM.png)|
+
+|Raw spectra|Difference Spectra|Michaelis Menten Plot|
+|------------|-------------|----------|
+|![](Regular_plate3protein_and_dmso_Corrected_Spectra_PM.png)|![](Regular_plate3protein_and_dmso_Difference_Spectra_PM.png)|![](Regular_plate3protein_and_dmso_Michaelis_Menten_PM.png)|
+|![](Regular_plate3arachadnic_acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3arachadnic_acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate3arachadnic_acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3arachadnic_acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate3arachadnic_acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3arachadnic_acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate3arachadnic_acid_3.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Lauric_Acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Lauric_Acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Lauric_Acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Lauric_Acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Lauric_Acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Lauric_Acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate3Lauric_Acid_3.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Palmitic_acid_1.1_Corrected_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_1.1_Difference_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_1.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Palmitic_acid_1.2_Corrected_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_1.2_Difference_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_1.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Lauric_acid_2.1_Corrected_Spectra_PM.png)|![](Regular_plate3Lauric_acid_2.1_Difference_Spectra_PM.png)|![](Regular_plate3Lauric_acid_2.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Palmitic_acid_2.2_Corrected_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_2.2_Difference_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_2.2_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Palmitic_acid_3.1_Corrected_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_3.1_Difference_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_3.1_Michaelis_Menten_PM.png)|
+|![](Regular_plate3Palmitic_acid_3.2_Corrected_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_3.2_Difference_Spectra_PM.png)|![](Regular_plate3Palmitic_acid_3.2_Michaelis_Menten_PM.png)|

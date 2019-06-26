@@ -67,7 +67,7 @@ def plotPlateData(data, title):
     colors = {1:'#304360',
     2:'#3f6c77',
     3:'#41a48c'}
-    ax.set_prop_cycle('color',plt.cm.inferno(np.linspace(0,0.9,len(data))))
+    ax.set_prop_cycle('color',plt.cm.magma(np.linspace(0,0.9,len(data))))
     plt.set_cmap('viridis')
 
     concs = np.array([1,1,
@@ -82,7 +82,7 @@ def plotPlateData(data, title):
     concs = np.around(concs,2)
     for i in range(len(data)):
         y = data.iloc[i,:]
-        plt.plot(x,y, lw = 2, alpha = 0.7)
+        plt.plot(x,y, lw = 2, alpha = 0.8)
     plt.title(title + ' Corrected Spectra')
     plt.xticks(x[::50])
     plt.xlim((220,800))
@@ -99,7 +99,7 @@ def plotPlateDifferenceSpectra(data,pureprotein,title):
     data = data.subtract(pureprotein,axis=1)
     x = data.columns.astype(int)
     fig, ax = plt.subplots(figsize=(7,2.5))
-    ax.set_prop_cycle('color',plt.cm.inferno(np.linspace(0,0.9,len(data))))
+    ax.set_prop_cycle('color',plt.cm.magma(np.linspace(0,0.9,len(data))))
     plt.set_cmap('viridis')
     concs = np.array([1,1,
     0.5,0.5,
@@ -113,7 +113,7 @@ def plotPlateDifferenceSpectra(data,pureprotein,title):
     concs = np.around(concs,2)
     for i in range(len(data)):
         y = data.iloc[i,:]
-        plt.plot(x,y, lw = 2, alpha = 0.7)
+        plt.plot(x,y, lw = 2, alpha = 0.8)
     plt.title(title + ' Difference Spectra')
     plt.xticks(x[::50])
     plt.xlim((350,800))
@@ -198,8 +198,8 @@ def StickItAllTogether(path, selection,concs,title):
     well_columns=well_columns[well_columns==selection].dropna().index
     data=data.iloc[well_columns]
     diffdiff=calculateDiffDiff(data.reset_index(drop=True),pureprotein_andDMSO.reset_index(drop=True))
-    #plotPlateData(data,title)
-    #plotPlateDifferenceSpectra(data,pureprotein_andDMSO,title)
+    plotPlateData(data,title)
+    plotPlateDifferenceSpectra(data,pureprotein_andDMSO,title)
     Plot_MichaelisMenten(diffdiff, concs,title)
 
 def generate_markdown_Table(titles):
@@ -228,8 +228,9 @@ titles = ['protein and dmso',
 'Lauric acid 2.1','Palmitic acid 2.2',
 'Palmitic acid 3.1','Palmitic acid 3.2'
 ]
+#titles = ['Regular_plate3'+i for i in titles]
 #generate_markdown_Table(titles)
 count=0
 for i in range(1,20):
-    StickItAllTogether('20190625_boi.CSV',i,concs, titles[count])
+    StickItAllTogether('20190625_regularplate_boi3.CSV',i,concs, 'Regular_plate3'+titles[count])
     count+=1
