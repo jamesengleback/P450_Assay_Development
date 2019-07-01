@@ -10,3 +10,4 @@
 5. [Even more](https://github.com/jamesengleback/P450_Assay_Development/tree/master/5_MoreIterations)
 6. [More](https://github.com/jamesengleback/P450_Assay_Development/tree/master/6_More_iterations)
 7. [more](https://github.com/jamesengleback/P450_Assay_Development/tree/master/7_MoreIterations)
+8. [Still having fun](https://github.com/jamesengleback/P450_Assay_Development/tree/master/8_MoIterations)
