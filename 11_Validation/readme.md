@@ -168,6 +168,20 @@ In [50]: bufferconcs['count']*=(6+25+8) # 6 reps * 8 wells per col with protein 
 4      150       0   6084
 5      150     200   6084
 
+In [55]: bufferconcs.columns=['Kpi /MM',  'Kcl/mM',  'Volume/ul']
+In [56]: bufferconcs['Volume/ul']+=500 # seem like a reasonable safety margin?
+
+In [57]: bufferconcs
+Out[57]:
+   Kpi /MM  Kcl/mM  Volume/ul
+0       50       0       6584
+1       50     200       6584
+2      100       0       2021
+3      100     100      11147
+4      150       0       6584
+5      150     200       6584
+
+
 
 
 ```
