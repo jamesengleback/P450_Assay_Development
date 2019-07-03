@@ -13,3 +13,4 @@
 8. [Still having fun](https://github.com/jamesengleback/P450_Assay_Development/tree/master/8_MoIterations)
 9. [jesus](https://github.com/jamesengleback/P450_Assay_Development/tree/master/9_Almost_there)
 10. [whatever here's a protocol](https://github.com/jamesengleback/P450_Assay_Development/tree/master/10_Protocol)
+11. [Designing a validation experiment](https://github.com/jamesengleback/P450_Assay_Development/tree/master/11_Validation)
