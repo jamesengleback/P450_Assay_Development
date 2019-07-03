@@ -136,3 +136,38 @@ In [20]: masterplate_df = pd.DataFrame(masterplate,columns = ['DMSO','Arachadion
 In [23]: masterplate_df.to_csv('masterplate_df.csv')
 ```
 [masterplate_df.csv](masterplate_df.csv)
+
+Cool, that should do it.
+
+********
+#### Buffer pipetting calculations
+I might as well do this now
+```python
+In [45]: bufferconcs = pd.read_csv('PlateLayout1.csv')
+
+In [46]: bufferconcs=bufferconcs.groupby(['Kpi /MM','Kcl/mM']).size().reset_index().rename(columns={0:'count'})\
+...: print(bufferconcs)
+Out[46]:
+   Kpi /MM  Kcl/mM  count
+0       50       0      4
+1       50     200      4
+2      100       0      1
+3      100     100      7
+4      150       0      4
+5      150     200      4
+
+
+In [50]: bufferconcs['count']*=(6+25+8) # 6 reps * 8 wells per col with protein in * 25 ul\
+    ...: print(bufferconcs) # I cheated and renamed the col by hand
+    ...:
+   Kpi /MM  Kcl/mM  Vol Prot/µl
+0       50       0   6084
+1       50     200   6084
+2      100       0   1521
+3      100     100  10647
+4      150       0   6084
+5      150     200   6084
+
+
+
+```
