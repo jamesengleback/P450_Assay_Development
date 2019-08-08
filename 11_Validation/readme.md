@@ -180,8 +180,271 @@ Out[57]:
 3      100     100      11147
 4      150       0       6584
 5      150     200       6584
+```
+One issue will be ensuring that the enzyme concentration is more or less the same across all the samples. I'll just have to pipette really carefully. And do maths properly.
 
+***********
 
+### Robot Stuff
+The plan is to adapt [this sheet](Example_Transfer_form.csv) to fit my experimental setup.
 
+```python
+In [33]: import pandas as pd
+
+In [34]: data = pd.read_csv('Example_Transfer_form.csv')
+
+In [35]: data
+Out[35]:
+    Volume SourcePlateBarcode SourcePlateWell DestinationPlateBarcode DestinationPlateWell     ComponentName
+0       48    MastermixTrough              A1           190424PCRLCR3                   A1                mm
+1       48    MastermixTrough              B1           190424PCRLCR3                   B1                mm
+2       48    MastermixTrough              C1           190424PCRLCR3                   C1                mm
+3       48    MastermixTrough              E1           190424PCRLCR3                   E1                mm
+4       48    MastermixTrough              F1           190424PCRLCR3                   F1                mm
+```
+Looks simple enough, I'm assuming that to multichannel I just reference the cell that heads the column. I'll use some sort of variable name instead barcodes for now.
+
+```python
+In [1]: import pandas as pd
+
+In [2]: assayPlate = pd.read_csv('PlateLayout1.csv')
+
+In [3]: ExampleSheet = pd.read_csv('Example_Transfer_form.csv')
+
+In [4]: masterplate = pd.read_csv('masterplate_df.csv')
+# Lot of different formats, whoops
+In [7]: Letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P']
+# Got to start indexin these plates properly
+# I might just write a proper script
+```
+
+*********
+### Prep
+I've decided to use this [transfer sheet](DraftTransferForm.ods) that I wrote manually. From the mastertrof, lane D is used most (7x), so per run I'll be using
+```python
+In [1]: 7*25*8
+Out[1]: 1400
+In [2]: 1400*6 #6 plates
+Out[2]: 8400
 
 ```
+8400µM of lane D. I'll check that the trof can hold That. For the ligands I'll be using:
+```python
+In [4]: 6*2*25 #6cols per cpd * 2 wells pr conc * 25 ul perwell
+Out[4]: 300
+In [5]: 6*300 #6 plate types
+Out[5]: 1800
+```
+1800µl for serial dilutions sounds a bit much, so I'll just duplicate the wells and make a second sheet. 3 and 3 should do it. Here's how the compound plate columns will look:
+
+|Column|Compound|
+|------|---------|
+|1|DMSO|
+|2|Arachadonic acid|
+|3|Lauric Acid|
+|4|Palmitic Acid|
+|5|4-Phenylimidazole|
+|6|DMSO|
+|7|Arachadonic acid|
+|8|Lauric Acid|
+|9|Palmitic Acid|
+|10|4-Phenylimidazole|
+|11|-|
+|12|-|
+
+********
+### 17th July - Test Day
+
+#### Lab notes
+1. Make compount plates
+  * 8% DMSO in 2000µl buffer (100mM KPi)
+
+```python
+In [1]: import pandas as pd
+
+In [2]: def mass_required(mw):
+   ...:    ...:     return mw * 0.1 * 0.001 # 0.1 M and 1 ml
+   ...:
+
+In [3]: arachadonic = mass_required(304.47)
+
+In [4]: lauric = mass_required(200.32)
+
+In [5]: palmitic = mass_required(278.41)
+
+In [6]: print('arachadonic: ',arachadonic,'lauric: ',lauric,'palmitic: ',palmitic)
+   ...: ('arachadonic: ', 0.030447000000000002, 'lauric: ', 0.020032, 'palmitic: ', 0.025642000000000005)
+   ...:
+('arachadonic: ', 0.030447000000000002, 'lauric: ', 0.020032, 'palmitic: ', 0.027841000000000005)
+Out[6]:
+('arachadonic: ',
+ 0.030447000000000002,
+ 'lauric: ',
+ 0.020032,
+ 'palmitic: ',
+ 0.025642000000000005)
+
+In [7]:  data=pd.DataFrame([[arachadonic,lauric,palmitic],[0.0311,0.0205,0.0168]],index=['Target Weight','Actual Weight']).transpose()
+
+In [8]: data['Vol required/ml']=data['Actual Weight']/data['Target Weight']
+
+In [9]:  data=pd.DataFrame([[arachadonic,lauric,palmitic],[0.0311,0.0205,0.0186]],index=['Target Weight','Actual Weight']).transpose()
+
+In [10]: data['Vol required/ml']=data['Actual Weight']/data['Target Weight']
+
+In [11]: data
+Out[11]:
+   Target Weight  Actual Weight  Vol required/ml
+0       0.030447         0.0311         1.021447
+1       0.020032         0.0205         1.023363
+2       0.027841         0.0186         0.668079
+
+```
+The palmitic acid wouldn't dissolve easily at that conc so I doubled up the DMSO volume for now.
+
+
+Here's some buffer caluclations - I'm doubling the KCl concs and for the KPi concs I've got this:
+```python
+In [17]: startingKPiConc(50.)
+Out[17]: 0.0
+
+In [18]: startingKPiConc(100.)
+Out[18]: 100.0
+
+In [19]: startingKPiConc(150.)
+Out[19]: 200.0
+```
+
+#### Change of plan!
+Ended up pushing the experiment back until Monday because I prioritised doing it on a robot over doing it soon. I met with Mark and we went through my sheet. It turns out that the channels are individually controlled and the sheet I had before would only do the columns. I made a [script](TransferSheetFix.py) to handle this, which gave [this transfer sheet](DraftTransferForm2.csv)
+
+**********
+20190729
+
+Did a wet run of my transfer sheet on Friday which looked fine. There's a slot today that I'll try to fill so I'm prepping. Here's my calcuclation for weighting out palmitic acid
+
+```python
+In [1]: mw=278.41
+
+In [2]: mw * 0.01 *0.01 # 0.01 M and 0.01 L
+Out[2]: 0.027841000000000005
+
+In [3]: target=mw * 0.01 *0.01 # 0.01 M and 0.01 L
+
+In [4]: actual=0.0263
+
+In [5]: target/actual * 10 #10 ml
+Out[5]: 10.585931558935362
+```
+So I added 10.58 ml of DMSO.
+
+* Protein conc - diluted 5µl fresh protein in 1000 of standard 100 mM KPi pH7 buffer and ook [this](20190729_BM3ConcCheck.csv) spec.![](assets/readme-7358ba58.py) and ran [this script](ProtinConcCheck.py) and got 4.808 µM which I think gives me 961 µM in my stock.  
+
+```python
+In [6]: 4.808504 * 200
+Out[6]: 961.7008000000001
+```
+
+So to make 10 µM stocks of protein in some 10 ml tubes, I'll need:
+
+```python
+In [7]: BM3Conc=4.808504 * 200
+
+In [8]: (10*10000)/BM3Conc #10µM*10ml (in µM)
+Out[8]: 103.98244443594098
+```
+
+I kept these on ice over the weekend because I was at a conference!!!
+
+***********
+
+### 20190806
+I used [this transfer sheet](TransferSheetStuff/20190722_DraftTransferWithBufferandCompounds.csv) to pipette out one plate on the Hamilton robot. It took hours and used 700 tips. Then I scanned it in, here's the data: [data](PlateData/20190806.CSV).
+
+### 20190807
+I did the other plates by hand and it was pretty quick. Here's the data:
+
+|Plate|Data|
+|----|------|
+|The black one|[data](PlateData/20190806.CSV)|
+|Brand Lipograde|[data](PlateData/20190807_BrandLipograde.CSV)|
+|Brand standard PS|[data](PlateData/20190807_BrandPSStandard.CSV)|
+|Thermo Delta|[data](PlateData/20190807_ThermoDelta.CSV)|
+
+I used this [modifed script](PlateData/PlateAnalysis_Cleaner.py) to return the metrics I wanted, which are in [this csv](PlateData/PlateValidationMetrix.csv). I modified it a little because the pipetting regimes were different for the hand pipetted vs the robot pipetted.
+
+Then I used [This script](PlateData/Regression.py) to make a multi-linear regression (with pytorch lol) to predict R² from X factors like plate type, substrate and buffer.
+
+|Loss over iterations (Mean squared error)|Predicted vs actual|
+|--------------|---------------|
+|![](PlateData/Lossrecord.png)|![](PlateData/PredictedVActual2.png)|
+
+The final mean squared error was 0.032. I didn't hold back a validation set though. Here are the weights:
+
+```python
+Brand Lipograde  Brand PS Standard  Thermo Delta  that black one  \
+0         0.092265           0.018709      0.147924        0.065661   
+
+4-PhenylImidazole  Arachadonic Acid  Lauric Acid  Palmitic Acid  \
+0          -0.430104          0.460231     0.254213       0.224739   
+
+Final [Kcl]  Final [Kpi]  
+0    -0.008368     0.050807   
+```
+
+Well looks like buffer doesn't matter.
+
+
+|1|2|3|4|
+|---|---|---|---|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Michaelis_Menten__Plate:_that_black_one__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Michaelis_Menten_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_200__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_DMSO_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_0__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_0__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_4-PhenylImidazole_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_Arachadonic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)|
+|![](PlateData/BM3_WT_Spectra___Plate:_that_black_one__[Kpi]:_100__[Kcl]:_200__Substrate:_Lauric_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Thermo_Delta__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)	|![](PlateData/BM3_WT_Spectra___Plate:_Brand_Lipograde__[Kpi]:_50__[Kcl]:_100__Substrate:_Palmitic_Acid_Corrected_Spectra_PM.png)|
