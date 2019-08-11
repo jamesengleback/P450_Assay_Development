@@ -395,7 +395,7 @@ Final [Kcl]  Final [Kpi]
 Well looks like buffer doesn't matter.
 
 
-|1|2|3|4|
+|theblackone|Thermo_Delta|Brand_PS_Standard|Brand_Lipograde|
 |---|---|---|---|
 |![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_4-PhenylImidazole_Difference_Spectra_PM.png)|
 |![](PlateData/BM3_WT_Difference_Spectra___Plate:_that_black_one__[Kpi]:_0__[Kcl]:_0__Substrate:_Lauric_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Thermo_Delta__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_PS_Standard__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)	|![](PlateData/BM3_WT_Difference_Spectra___Plate:_Brand_Lipograde__[Kpi]:_100__[Kcl]:_0__Substrate:_Arachadonic_Acid_Difference_Spectra_PM.png)|
