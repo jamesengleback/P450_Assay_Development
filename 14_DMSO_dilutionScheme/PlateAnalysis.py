@@ -269,7 +269,7 @@ def main():
         df=pd.DataFrame([],columns=['Raw Spec','Difference Spec','Michaelis Menten'])
     metrix_table=pd.DataFrame([],columns = ['vmax','Km','R^2'])
 
-    for i in tqdm(range(1,len(whatCompoundInWhatColumn))):
+    for i in tqdm(range(1,len(whatCompoundInWhatColumn)+1)):
 
         data, pureprotein_andDMSO, diffdiff = Data_Munjing_pipeline(path,i)
         compound=whatCompoundInWhatColumn[i]

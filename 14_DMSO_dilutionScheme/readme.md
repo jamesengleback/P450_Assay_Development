@@ -52,6 +52,7 @@ I ran this version of [PlateAnalysis.py](PlateAnalysis.py) and got this out:
 | ![](20191018_Method_B:_Arachadionic_acid_1_Corrected_Spectra.png) | ![](20191018_Method_B:_Arachadionic_acid_1_Difference_Spectra.png) | ![](20191018_Method_B:_Arachadionic_acid_1_Michaelis_Menten.png) |
 | ![](20191018_Method_B:_Arachadionic_acid_2_Corrected_Spectra.png) | ![](20191018_Method_B:_Arachadionic_acid_2_Difference_Spectra.png) | ![](20191018_Method_B:_Arachadionic_acid_2_Michaelis_Menten.png) |
 | ![](20191018_Method_B:_SDS_1_Corrected_Spectra.png)               | ![](20191018_Method_B:_SDS_1_Difference_Spectra.png)               | ![](20191018_Method_B:_SDS_1_Michaelis_Menten.png)               |
+| ![](20191018_Method_B:_SDS_2_Corrected_Spectra.png)               | ![](20191018_Method_B:_SDS_2_Difference_Spectra.png)               | ![](20191018_Method_B:_SDS_2_Michaelis_Menten.png)               |
 
 |                               |       vmax |          Km |         R^2 |
 |:------------------------------|-----------:|------------:|------------:|
@@ -66,5 +67,7 @@ I ran this version of [PlateAnalysis.py](PlateAnalysis.py) and got this out:
 | Method B: Arachadionic acid 1 | 0.849269   |    14.1502  |    0.546063 |
 | Method B: Arachadionic acid 2 | 0.838064   |    14.9833  |    0.540668 |
 | Method B: SDS 1               | 0.935062   |    31.374   |    0.782434 |
+| Method B: SDS 2               | 0.930265   |    28.0641  |    0.750309 |
 
 My multichannel pipette needs recalibrating! It's registered to be recalibrated at some point but I'm not sure when.
+I need to make sure that each method is baselined against its correspinding DMSO trace. In the mean time I can see just how un-calibrated my pipettes are.
